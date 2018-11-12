@@ -1,0 +1,65 @@
+﻿@model CowabungaBay2.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Employee Name
+        </dt>
+        @if (ViewBag.Name != null)
+        {
+            <dd>
+                @ViewBag.Name
+            </dd>
+            <dt>
+                I9 Image
+            </dt>
+
+            <dd>
+                @Html.Raw(ViewBag.I9)
+            </dd>
+
+            <dt>
+                Picture ID
+            </dt>
+
+            <dd>
+                @Html.Raw(ViewBag.PictureID)
+            </dd>
+        }
+        else
+        {
+            <dd>
+                @Model.EmployeeName
+            </dd>
+
+            <dt>
+                I9 Image
+            </dt>
+
+            <dd>
+                <img src="data:image;base64,@System.Convert.ToBase64String(Model.I9)" alt="Not Uploaded" width="200" height="200" />
+            </dd>
+
+            <dt>
+                Picture ID
+            </dt>
+
+            <dd>
+                <img src="data:image;base64,@System.Convert.ToBase64String(Model.PictureID)" width="200" height="200" />
+            </dd>
+        }
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

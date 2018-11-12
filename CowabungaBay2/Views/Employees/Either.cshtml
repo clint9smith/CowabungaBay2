@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CowabungaBay2.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>These Employees Haven't Submitted one of the Forms</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            I9
+        </th>
+        <th>
+            PictureID
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.I9 == null | item.PictureID == null)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
+        </td>
+        @if (item.I9 == null)
+        {
+
+            <td>
+                <p style="color:red">X</p>
+            </td>
+        }
+        else
+        {
+            <td> <p style="color:green">&#10004;</p> </td>}
+        @if (item.PictureID == null)
+        {
+            <td>
+                <p style="color:red">X</p>
+            </td>
+        }
+        else
+        {
+            <td> <p style="color:green">&#10004;</p> </td>}
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+        </td>
+    </tr>
+        }
+    }
+    </table>
