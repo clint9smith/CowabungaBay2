@@ -4,7 +4,7 @@
 
 <div class="jumbotron">
     <h1>Employee Forms Tracker</h1>
-    <p class="lead">Use the links above to track your employees and the items that still need to be uploaded</p>
+    <p class="lead">Use the links below to track your employees and the items that still need to be uploaded</p>
 </div>
 
 <div class="row">
@@ -19,7 +19,8 @@
     </div>
     <div class="col-md-6">
         <h2>All Employees</h2>
-        <p>Shows a list of all employees. </p>
+        <p>Show a list of all employees or search for a specific employee by name</p>
         <p><input type="button" class="btn btn-default" value="Show all &raquo;" onclick="location.href='@Url.Action("Index", "Employees")'" /></p>
+        <p><input type="button" class="btn btn-default" value="Search &raquo;" onclick="location.href='@Url.Action("Search", "Employees")'" /></p>
     </div>
 </div>

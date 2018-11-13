@@ -7,10 +7,7 @@ namespace CowabungaBay2.Models
 {
     public class UserInput
     {
-        public int ID { get; set; }
-        public string EmployeeName { get; set; }
-        public byte[] I9 { get; set; }
-        public byte[] PictureID { get; set; }
+        public string searchname { get; set; }
 
     }
 }

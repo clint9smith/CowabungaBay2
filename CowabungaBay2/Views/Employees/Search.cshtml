@@ -1,0 +1,23 @@
+﻿@model CowabungaBay2.Models.UserInput
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+@using (Html.BeginForm("Search", "Employees"))
+{
+    @Html.TextBoxFor(x => x.searchname)
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
+    </div>
+}
+@if (ViewBag.Status != null)
+{
+    <p>@ViewBag.Status</p>
+}
+

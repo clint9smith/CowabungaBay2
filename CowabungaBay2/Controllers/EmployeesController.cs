@@ -36,6 +36,24 @@ namespace CowabungaBay2.Controllers
             return View(db.Employees.ToList());
         }
 
+        public ActionResult Search()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Search(UserInput userInput)
+        {
+            foreach (Employee x in db.Employees.ToList())
+            {
+                if (userInput.searchname == x.EmployeeName)
+                {
+                    return View("Details",x);
+                }
+            }
+            ViewBag.Status = "That Employee Wasn't Found";
+            return View();
+        }
+
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {
